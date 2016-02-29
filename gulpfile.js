@@ -8,41 +8,74 @@ var gulp = require('gulp'),
     reload = browsersync.reload,
     sass = require('gulp-sass'),
     cleanCSS = require('gulp-clean-css'),
-    del = require('del');
+    del = require('del'),
+    htmlmin = require('gulp-htmlmin'),
+    runSequence = require('run-sequence'),
+    imageMin = require('gulp-imagemin');
 
 
 
 gulp.task('browser-sync', function() {
     browsersync({
         server: {
-            baseDir: "./dist/"
+            baseDir: "dist/"
         }
     });
 });
 
-gulp.task('sass', function() {
-  return gulp.src('./app/styles/**/*.scss')
+// BEGIN CSS Tasks
+gulp.task('compile-scss', function() {
+  return gulp.src('app/styles/**/*.scss')
     .pipe(plumber())
     .pipe(sass({outputStyle: 'compressed'}))
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
     }))
-    .pipe(gulp.dest('./css'));
+    .pipe(gulp.dest('dist/styles'));
 });
 
 gulp.task('minify-css', function() {
-  return gulp.src('./css/*.css')
-    .pipe(cleanCSS({debug: true}, function(details) {
-      console.log(details.stats.originalSize);
-      console.log(details.stats.minifiedSize);
+  return gulp.src('dist/styles/*.css')
+    .pipe(cleanCSS())
+    .pipe(gulp.dest('dist/styles/'));
+});
+// END
+
+// BEGIN Image Tasks
+gulp.task('optimize-images', function() {
+  return gulp.src('app/images/*')
+    .pipe(imageMin({
+      optimizationLevel: 4,
+      progressive: true,
+      interlaced: true,
+      multipass: true
     }))
-    .pipe(gulp.dest('./minifiedCSS'));
+    .pipe(gulp.dest('dist/images'))
 });
 
-gulp.task('clean', function() {
-  return del(['minifiedCSS', 'css']);
+
+
+// BEGIN HTML Tasks
+gulp.task('minify-html', function() {
+  return gulp.src('app/views/**/*.html')
+    .pipe(htmlmin({collapseWhitespace: true, removeComments: true}))
+    .pipe(gulp.dest('dist/views'));
 });
+// END
+
+gulp.task('build', function() {
+  runSequence('clean', 'compile-scss', ['minify-css', 'minify-html', 'optimize-images']);
+});
+
+// Clean
+gulp.task('clean', function() {
+  return del(['dist']);
+});
+
+
+
+
 
 
 
