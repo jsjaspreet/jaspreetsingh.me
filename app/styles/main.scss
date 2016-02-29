@@ -1,0 +1,62 @@
+// base
+@import '_base.scss';
+
+// top nav
+@import '_top-nav.scss';
+
+@media(max-width: 994px){
+#title {
+  font: 4.5em 'Roboto', sans-serif;
+  color: ghostwhite;
+  -webkit-text-stroke: 1px gray;
+  position: absolute;
+  top: 40%;
+  left: 16%;
+}
+}
+@media(min-width: 995px){
+#title {
+  font: 8.5em 'Roboto', sans-serif;
+  color: ghostwhite;
+  -webkit-text-stroke: 1px gray;
+  position: absolute;
+  top: 40%;
+  left: 16%;
+}
+}
+
+
+
+body {
+  background: url(../images/griffith.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+@keyframes blink {
+  0% {
+    opacity: 1.0;
+  }
+  50% {
+    opacity: 0.0;
+  }
+  100% {
+    opacity: 1.0;
+  }
+}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1.0;
+  }
+  50% {
+    opacity: 0.0;
+  }
+  100% {
+    opacity: 1.0;
+  }
+}
+.blink {
+  animation: blink 1s step-start 0s infinite;
+  -webkit-animation: blink 1s step-start 0s infinite;
+}
+
