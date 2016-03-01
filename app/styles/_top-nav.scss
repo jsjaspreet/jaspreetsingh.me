@@ -1,34 +1,29 @@
 .PT-sans {
-  font: 2.5em 'Source Sans Pro', sans-serif;
+  font: 3em 'Source Sans Pro', sans-serif;
   word-spacing: .3em;
 }
 
 #logo {
-  max-width: 330px;
-  max-height: 360px;
+  width: 200px;
+  height: auto;
   display: inline-block;
-  margin-left: 0%;
-  margin-right: 5%;
+  margin-left: 15%;
+  margin-top: 5%;
 }
 
 @media(max-width: 769px){
 #logo {
   display: none;
-
 }
+  #top-nav {
+    margin-left: 20%;
+    margin-right: 15%;
+
+  }
 }
 
-@media (min-width: 995px){
 #nav-links{
   margin-top:5%;
-  padding-left: 5%;
-}
-}
-@media (max-width: 994px){
-#nav-links{
-  padding-left: 20%;
-  margin-top:5%;
-}
 }
 
 #top-nav{

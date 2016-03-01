@@ -4,14 +4,49 @@
 // top nav
 @import '_top-nav.scss';
 
-@media(max-width: 994px){
+@media(max-width: 479px) {
+  #title {
+    font: 3.5em 'Roboto', sans-serif;
+    color: ghostwhite;
+    -webkit-text-stroke: 1px gray;
+    position: absolute;
+    top: 30%;
+    left: 13%;
+  }
+}
+
+
+@media (min-width: 480px) and (max-width: 566px) {
+  #title {
+    font: 4.5em 'Roboto', sans-serif;
+    color: ghostwhite;
+    -webkit-text-stroke: 1px gray;
+    position: absolute;
+    top: 30%;
+    left: 13%;
+  }
+}
+
+
+@media(min-width: 567px) and (max-width: 679px) {
+  #title {
+    font: 5.5em 'Roboto', sans-serif;
+    color: ghostwhite;
+    -webkit-text-stroke: 1px gray;
+    position: absolute;
+    top: 30%;
+    left: 13%;
+  }
+}
+
+@media(min-width: 680px) and (max-width: 994px){
 #title {
-  font: 4.5em 'Roboto', sans-serif;
+  font: 6.5em 'Roboto', sans-serif;
   color: ghostwhite;
   -webkit-text-stroke: 1px gray;
   position: absolute;
-  top: 40%;
-  left: 16%;
+  top: 30%;
+  left: 13%;
 }
 }
 @media(min-width: 995px){
@@ -20,15 +55,13 @@
   color: ghostwhite;
   -webkit-text-stroke: 1px gray;
   position: absolute;
-  top: 40%;
-  left: 16%;
+  top: 30%;
+  left: 13%;
 }
 }
-
-
 
 body {
-  background: url(../images/griffith.jpg) no-repeat center center fixed;
+  background: url(../images/background3.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 
