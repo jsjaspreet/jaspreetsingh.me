@@ -1,0 +1,15 @@
+Blog Post Ideas
+
+30 Days To Reinventing Yourself
+
+    - Picked up meditation
+    - Started working out forreal, progressive overload with measured results
+    - Diligently caring about nutrition
+    - Precommitment to stay away from situations that bring out the worst in me
+    - Loving yourself, truly, looking in the mirror and saying you love the person you see, believing that that person is enough. A person worth building on.
+
+
+
+Technical Blog Post / Portfolio:
+- Apache Storm use case
+- RabbitMQ Throttling Application Queue

@@ -1,4 +1,6 @@
 var gulp = require('gulp'),
+    imageResize = require('gulp-image-resize'),
+    parallel = require('concurrent-transform'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify'),
     gutil = require('gulp-util'),
@@ -12,7 +14,8 @@ var gulp = require('gulp'),
     htmlmin = require('gulp-htmlmin'),
     runSequence = require('run-sequence'),
     imageMin = require('gulp-imagemin'),
-    merge = require('merge-stream');
+    merge = require('merge-stream'),
+    os = require('os');
 
 
 
@@ -81,6 +84,15 @@ gulp.task('build', function() {
 // Clean
 gulp.task('clean', function() {
   return del(['dist']);
+});
+
+gulp.task('image-resize', function() {
+  gulp.src('app/images/background3.jpg')
+    .pipe(parallel(imageResize({
+      width: 1920
+    }), os.cpus().length))
+    .pipe(rename(function (path) { path.basename += "-1920"; }))
+    .pipe(gulp.dest('images'));
 });
 
 // Watcher

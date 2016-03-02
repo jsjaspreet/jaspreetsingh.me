@@ -1,0 +1,21 @@
+// base
+@import '_base.scss';
+
+// top nav
+@import '_top-nav.scss';
+
+.blog-title {
+  color: #004BB2;
+  font: 4em 'Lobster Two', cursive;
+}
+
+.blog-heading {
+  font: 2.5em 'Roboto Slab', serif;
+  margin: 45px 0 0 0;
+}
+
+.blog-text {
+  font: 1.8em 'Cabin', sans-serif;
+  margin: 20px 0 20px 0;
+  line-height: 1.5em;
+}
