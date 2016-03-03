@@ -4,21 +4,63 @@
 // top nav
 @import '_top-nav.scss';
 
-.blog-title {
-  color: #004BB2;
-  font: 4em 'Lobster Two', cursive;
+@media(min-width: 625px) {
+  .blog-title {
+    color: #004BB2;
+    font: 4em 'Lobster Two', cursive;
+  }
+
+  .blog-heading {
+    font: 2.5em 'Roboto Slab', serif;
+    margin: 45px 0 0 0;
+  }
+
+  .blog-text {
+    font: 1.6em 'Cabin', sans-serif;
+    margin: 25px 0 35px 0;
+    line-height: 1.5em;
+  }
+}
+@media(max-width: 624px) and (min-width: 381px) {
+  .blog-title {
+    color: #004BB2;
+    font: 3.5em 'Lobster Two', cursive;
+  }
+
+  .blog-heading {
+    font: 2em 'Roboto Slab', serif;
+    margin: 45px 0 0 0;
+  }
+
+  .blog-text {
+    font: 1.5em 'Cabin', sans-serif;
+    margin: 25px 0 35px 0;
+    line-height: 1.5em;
+  }
 }
 
-.blog-heading {
-  font: 2.5em 'Roboto Slab', serif;
-  margin: 45px 0 0 0;
+
+
+
+@media(max-width: 380px) {
+   .blog-title {
+    color: #004BB2;
+    font: 3em 'Lobster Two', cursive;
+  }
+
+  .blog-heading {
+    font: 1.5em 'Roboto Slab', serif;
+    margin: 5px 0 0 0;
+  }
+
+  .blog-text {
+    font: 1.2em 'Cabin', sans-serif;
+    margin: 10px 0 10px 0;
+    line-height: 1.5em;
+  }
 }
 
-.blog-text {
-  font: 1.8em 'Cabin', sans-serif;
-  margin: 20px 0 20px 0;
-  line-height: 1.5em;
-}
+
 
 @media(min-width: 625px){
 
