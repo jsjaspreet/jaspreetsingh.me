@@ -19,3 +19,23 @@
   margin: 20px 0 20px 0;
   line-height: 1.5em;
 }
+
+@media(min-width: 625px){
+
+  .blog-media {
+    width: 600px;
+  }
+}
+
+@media(min-width: 434px) and (max-width: 624px) {
+  .blog-media {
+    width: 400px;
+  }
+
+}
+
+@media(max-width: 433px) {
+  .blog-media {
+    width: 300px;
+  }
+}
